@@ -1,0 +1,71 @@
+body {
+	margin: 0px;
+}
+#header {
+	background: #1b3a12; color: white;
+	font-size: 16px; padding: 16px;
+}
+#header > #name {
+	float: left;
+	font-family: 'Sigmar One', cursive;
+	font-size: 15px;
+}
+#menu a, #menubutton a {
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	font: arial; font-size: 15px;
+}
+@media only screen and (min-width: 600px) {
+	#menubutton {
+		display: inline;
+		float: right;
+	}
+	#menu {
+		position: absolute; top: 48px;
+		right: 0px; background: #1b3a12;
+		padding: 16px;
+	}
+	.showmenu {
+		display: block;
+	}
+	.hiddenmenu {
+		display: none;
+	}
+	.menuitem {
+		display: block;
+		width: 80px;
+	}
+	.menuitem + .menuitem {
+		margin-top: 8px;
+	}
+}
+.clear {
+	clear: both;
+}
+#container {
+	width: 81%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	position: fixed; top: 72px; left:232px; bottom: 34px;
+}
+.table {
+	width: 100%;
+	display: table;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.table-row {
+	display: table-row;
+	background-color: silver;
+}
+.table-cell {
+	display: table-cell;
+	padding: 10px;
+}
+#header > .table-cell {
+	background-color: #1b3a12;
+}
+a {
+	text-decoration: none;
+}

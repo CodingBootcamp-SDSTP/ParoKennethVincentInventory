@@ -1,0 +1,80 @@
+body {
+	margin: 0px;
+}
+#header {
+	background: #1b3a12; color: white;
+	font-size: 16px; padding: 16px;
+}
+#header > #name {
+	float: left;
+	font-family: 'Sigmar One', cursive;
+	font-size: 15px;
+}
+#menu a, #menubutton a {
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	font: arial; font-size: 15px;
+}
+@media only screen and (min-width: 600px) {
+	#menubutton {
+		display: inline;
+		float: right;
+	}
+	#menu {
+		position: absolute; top: 48px;
+		right: 0px; background: #1b3a12;
+		padding: 16px;
+	}
+	.showmenu {
+		display: block;
+	}
+	.hiddenmenu {
+		display: none;
+	}
+	.menuitem {
+		display: block;
+		width: 80px;
+	}
+	.menuitem + .menuitem {
+		margin-top: 8px;
+	}
+}
+.clear {
+	clear: both;
+}
+#content {
+	display: table-cell;
+	vertical-align: middle;
+	top: 12%;
+	bottom: 100px;
+	left: 18%;
+	position: fixed;
+}
+.sidebar {
+	width: 200px; height: 100vh; 
+	background-color: #b6aeae; 
+	position: fixed; top: 58px; left: 0px; text-align: center;
+	display: block;
+}
+.sidebar .button {
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: bold;
+	background-color: #b6aeae;
+	border: none;
+	padding: 12px 16px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 200px;
+	border-bottom: 1px solid white;
+}
+.button:hover {
+	color: #1b3a12;
+}
+.material-icons {vertical-align:-14%}
+p:focus, button:focus {
+	outline: none;
+}
+a {
+	text-decoration: none;
+}
