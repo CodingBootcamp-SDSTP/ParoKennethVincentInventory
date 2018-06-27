@@ -29,9 +29,7 @@
 		</div>
 		<div class="sidebar">
 			<p><a class="button" id="dashboard" name="dashboard" href="dashboard.jsp"><i class="w3-margin-left material-icons">home</i>Dashboard</a></p>
-			<form id="accountTable" method="GET" action="accountlist">
 			<p><a class="button" id="account" name="account" href="account.jsp"><i class="fa fa-users"></i>Account</a></p>
-			</form>
 			<p><a class="button" id="asset" name="asset" href="inventory.jsp"><i class="fa fa-folder-open"></i> Asset Inventory</a></p>
 			<p><a class="button" id="logs" name="logs"><i class="fa fa-tasks"></i> Logs</a></p>
 			<p><a class="button" id="report" name="report"><i class="material-icons">report</i> Report</a></p>

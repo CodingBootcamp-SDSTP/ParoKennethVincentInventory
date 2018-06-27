@@ -20,23 +20,16 @@ public class AccountListServlet extends HttpServlet
 		RequestDispatcher rs = request.getRequestDispatcher("account.jsp");
 		rs.include(request, response);
 		ArrayList<Account> account = ac.getAllAccounts();
-		StringBuilder sb = new StringBuilder("<div class='table-row'>");
+		StringBuilder sb = new StringBuilder("<accounts>");
 		for(Account a : account) {
-			sb.append("<div class='table-cell'>" + a.getId() + "</div>");
-			sb.append("<div class='table-cell'>" + a.getUsername() + "</div>");
-			sb.append("<div class='table-cell'>" + a.getEmail() + "</div>");
-			sb.append("<div class='table-cell'>" + a.getRole() + "</div>");
-			sb.append("<div class='table-cell'>" + a.getStatus() + "</div>");
-			sb.append("<div class='table-cell'>" + a.getDate() + "</div>");
-			sb.append("<div class='table-cell' id='box1'>");
-			sb.append("<a class='button' href='#popup2'>");
-			sb.append("<i class='fa fa-user-times style='font-size:24px'></i>");
-			sb.append("</a>");
-			sb.append("<a class='button' id='edit' href='#'>");
-			sb.append("<i class='material-icons'>edit</i>");
-			sb.append("</a>");
+			sb.append("<account><id>" +a.getId() + "</id>");
+			sb.append("<username>" + a.getUsername() + "</username>");
+			sb.append("<email>" + a.getEmail() + "</email>");
+			sb.append("<role>" + a.getRole() + "</role>");
+			sb.append("<status>" + a.getStatus() + "</status>");
+			sb.append("<date>" + a.getDate() + "</date></account>");
 		}
-		sb.append("</div>");
+		sb.append("</accounts>");
 		out.println(sb.toString());
 	}
 

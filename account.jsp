@@ -4,25 +4,22 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<title></title>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="dashboard.css">
-		<link href="https://fonts.googleapis.com/css?family=Kalam|Righteous" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Sigmar+One" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="account.css">
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="dashboard.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Kalam|Righteous" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Sigmar+One" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+		<link rel="stylesheet" href="account.css"/>
 	</head>
 	<body>
 		<%
 			if(session.getAttribute("username")==null) {
 				response.sendRedirect("login.jsp");
 			}
-			AccountsListDatabase ald = new AccountsListDatabase();
-			AccountCollection ac = ald.getAccountCollection();
-			ArrayList<Account> account = ac.getAllAccounts();
 		%>
 		<div id="header">
 			<div id="name">Residence</div>
@@ -49,15 +46,15 @@
 			<div class="popup">
 				<form id="signupform" method="POST" action="adduser">
 				<h1>Add user</h1>
-				<div id="user"><input type="text" id="username" name="username" placeholder="Username" value="" autocomplete="off" required></div>
-				<div id="email"><input type="text" id="emailadd" name="email" placeholder="Email" required></div>
-				<div id="role_field"><input type="text" id="role" name="role" placeholder="Role" required></div>
-				<div id="status_field"><input type="text" id="status" name="status" placeholder="Status" required></div>
-				<div id="pass"><input type="password" id="password" name="password" placeholder="Password" required></div>
-				<div id="repass"><input type="password" id="repassword" name="repassword" placeholder="Re-enter Password" required></div>
-				<div id="date_field"><input type="text" id="date" name="date" placeholder="Date" required></div>
-				<div id="submitlogin"><input type="submit" id="addUser" value="Add user"></div>
-				<div id="canceladd"><input type="submit" id="cancelAdd" value="Cancel" formnovalidate></div>
+				<div id="user"><input type="text" id="username" name="username" placeholder="Username" autocomplete="off" required /></div>
+				<div id="email"><input type="text" id="emailadd" name="email" placeholder="Email" required /></div>
+				<div id="role_field"><input type="text" id="role" name="role" placeholder="Role" required /></div>
+				<div id="status_field"><input type="text" id="status" name="status" placeholder="Status" required /></div>
+				<div id="pass"><input type="password" id="password" name="password" placeholder="Password" required /></div>
+				<div id="repass"><input type="password" id="repassword" name="repassword" placeholder="Re-enter Password" required /></div>
+				<div id="date_field"><input type="text" id="date" name="date" placeholder="Date" required /></div>
+				<div id="submitlogin"><input type="submit" id="addUser" value="Add user" /></div>
+				<div id="canceladd"><input type="submit" id="cancelAdd" value="Cancel" formnovalidate /></div>
 				</form>
 			</div>
 		</div>
@@ -72,7 +69,10 @@
 				<div class="table-cell">Options</div>
 			</div>
 			<%
-				Account a = new Account(); {
+				AccountsListDatabase ald = new AccountsListDatabase();
+				AccountCollection ac = ald.getAccountCollection();
+				ArrayList<Account> account = ac.getAllAccounts();
+				for(Account a : account) {
 			%>
 			<div id="popup2" class="overlay1">
 				<div class="popup1">
@@ -84,9 +84,6 @@
 					</form>
 				</div>
 			</div>
-			<%
-				for(Account a : account) {
-			%>
 			<div class="table-row">
 				<div class="table-cell"><%= a.getId() %></div>
 				<div class="table-cell"><%= a.getUsername() %></div>
